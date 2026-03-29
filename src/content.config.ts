@@ -8,8 +8,7 @@ const pages = defineCollection({
 	schema: () =>
 		z.object({
 			title: z.string().optional(),
-			pubDate: z.coerce.date().optional(),
-			updatedDate: z.coerce.date().optional(),
+			date: z.coerce.date().optional(),
 			attribute: z.coerce.string().array().optional(),
 		}),
 })

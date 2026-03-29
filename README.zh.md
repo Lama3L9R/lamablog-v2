@@ -131,8 +131,7 @@ src/
    ```yaml
    ---
    title: 页面标题
-   pubDate: 2026-03-28
-   updatedDate: 2026-03-28
+   date: 2026-03-28
    attribute: []  # 用于特殊页面路由
    ---
    ```

@@ -1,6 +1,6 @@
 ---
 title: 'Markdown Style Guide'
-pubDate: 'Jun 19 2024'
+date: 'Jun 19 2024'
 ---
 
 # Markdown Style Guide

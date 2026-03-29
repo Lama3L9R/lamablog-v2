@@ -131,8 +131,7 @@ If you want to use my blog template, please modify based on the following config
    ```yaml
    ---
    title: Page Title
-   pubDate: 2026-03-28
-   updatedDate: 2026-03-28
+   date: 2026-03-28
    attribute: []  # for special page routing
    ---
    ```

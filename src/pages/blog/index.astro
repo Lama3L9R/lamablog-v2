@@ -12,7 +12,7 @@ const posts = (await getCollection("pages")).filter(it => {
 		return it.data.attribute ? it.data.attribute.every(it => !excludedAttributes.includes(it)) : true
 	}
 }).sort(
-	(a, b) => (b.data.pubDate?.valueOf() ?? -Infinity) - (a.data.pubDate?.valueOf() ?? 0),
+	(a, b) => (b.data.date?.valueOf() ?? -Infinity) - (a.data.date?.valueOf() ?? 0),
 )
 ---
 
@@ -31,7 +31,7 @@ const posts = (await getCollection("pages")).filter(it => {
 				}}> {post.data.title} </a>
 				<p class="text-sm text-gray-500" style={{
 					userSelect: "none"
-				}}> {post.data.pubDate?.toLocaleDateString()} </p>
+				}}> {post.data.date?.toLocaleDateString()} </p>
 			</div>
 		})
 	}
