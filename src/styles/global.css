@@ -1,0 +1,20 @@
+
+@import "tailwindcss";
+/* @plugin '@tailwindcss/typography'; */
+
+:root {
+	--accent: #62d6e8;
+	--d-accent: #294b50;
+}
+
+body {
+	background-color: #282936;
+	font-size: 20px;
+	padding-left: 5rem;
+	padding-right: 5rem;
+    color: #e9e9f4
+}
+
+* {
+	min-width: 0%;
+}

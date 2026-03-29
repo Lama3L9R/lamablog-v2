@@ -1,0 +1,20 @@
+---
+import '../styles/md.css';
+
+const { class: className, ...props } = Astro.props
+---
+
+<div {...props} class:list={[className, "bodybox-container"]} style={{
+    marginTop: "1.5rem",
+    padding: "1.5rem",
+    backgroundColor: "#3a3c4e",
+}}>
+    <slot />
+</div>
+
+<style>
+    .bodybox-container {
+        border-radius: 0.5rem;
+        gap: 0.5rem;
+    }
+</style>

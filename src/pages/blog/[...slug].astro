@@ -1,0 +1,23 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Page from '../../components/Page.astro';
+import { BUILD_INFO } from '../../consts';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('pages');
+	return posts.filter(it => {
+		if (BUILD_INFO.buildType === "production") {
+			return !it.data.attribute?.includes("dev")
+		} else {
+			return true;
+		}
+	}).map((post) => ({
+		params: { slug: post.id },
+		props: post,
+	}))
+}
+
+const post = Astro.props
+---
+
+<Page src={post.id} />

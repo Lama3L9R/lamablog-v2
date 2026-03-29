@@ -1,0 +1,46 @@
+---
+import { SITE_TITLE } from "../consts";
+
+---
+
+
+<header>
+	<nav style={{
+		paddingTop: "1.5rem"
+	}}>
+		<div class="flex flex-row header-space items-center">
+			<div class="basis-auto header-root-sp self-center"> 
+				<a href="/" style={{
+					color: "#282936"
+				}}>[{SITE_TITLE}] </a>
+			</div>
+
+			<div class="basis-auto header-element-container"> 
+				<a href="/about" class="content-start"> about </a>
+			</div>
+			<div class="basis-auto header-element-container"> 
+				<a href="/blog"> posts </a>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<style>
+	.header-root-sp {
+		padding: 0.2rem 1rem 0.2rem 1rem;
+		margin-right: 2rem;
+		background-color: #ebff87;
+	}
+
+	.header-element-container {
+		padding: 0.2rem 1rem 0.2rem 1rem;
+		color: var(--accent);
+		font-weight: 500;
+		text-decoration: underline;
+		font-size: x-large;
+	}
+
+	.header-space {
+		font-family: monospace;
+	}
+</style>

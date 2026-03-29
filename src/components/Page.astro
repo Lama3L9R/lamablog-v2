@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import BodyBox from '../components/BodyBox.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { render } from 'astro:content';
+import RightBar from '../components/RightBar.astro';
+
+const props = Astro.props
+
+let Content = null
+
+if (props.src) {
+    let pageMd = null
+
+    if (props.src.startsWith("!")) {
+        pageMd = (await getCollection('pages')).find((entry) => {
+    	    return entry.data.attribute?.includes(props.src.slice(1).trim())
+        })
+    } else {
+        pageMd = (await getCollection('pages')).find((entry) => {
+            return entry.id === props.src || entry.filePath?.endsWith(props.src)
+        })
+    }
+
+    Content = (await render(pageMd!)).Content
+}
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+
+	<body>
+        <noscript>
+            <style is:inline>
+	        	#master-view {
+	        		display: none !important;
+	        	}
+                video {
+                    max-width: 100vw;
+                    max-height: 80vh;
+                    object-fit: contain;
+                    display: block;
+                }
+	        </style>
+
+            <div id="punishment-for-not-trusting-me" class="flex flex-col p-8">
+                <a class="text-red-500 font-bold text-5xl pb-8 text-center"> Hello, and FUCK YOU! </a>
+                <video autoplay controls playsinline loop preload="metadata">
+	                <source src="/av10492.mp4" type="video/mp4" />
+	                <p> Congratulations! You Win! Can you FUCK off now? </p>
+	            </video>
+            </div>
+        </noscript>
+
+        <div class="flex flex-col justify-center items-center w-full">
+            <div id="master-view" style={{
+                width: "100ch",
+                maxWidth: "100ch",
+            }}>
+                <Header />
+
+		        <div class="flex flex-row justify-between">
+		        	<BodyBox class="grow basis-4/5 flex flex-col">
+                        {
+                            Content ? <Content /> : <slot />
+                        }
+		        	</BodyBox>
+                
+		        	<RightBar class="grow-0 basis-1/5" />
+		        </div>
+            
+		        <Footer />
+            </div>
+        </div>
+	</body>
+	
+	<script is:inline>
+		/* Imported from noie.2025.js */
+		try{eval('/0/i');document["NOIE_PASS"]=1}catch(err){document["NOIE_PASS"]=0};
+		
+		if (!document["NOIE_PASS"]) {
+			document.documentElement.innerHTML = `
+				<body style="background: #000000; color: #ffffff; text-align: center; padding: 50px;">
+					<h1 style="font-size: 40px">我很好奇，你为什么要在 2026 年使用如此复古的浏览器？</h1>
+					<p>反正我不想支持，我也不喜欢你用复古浏览器的行为，所以我把整个页面都删了 </p>
+					<p>你要非想看，那你自己编辑下 html 把，就在末尾，但是别忘了感激我 </p>
+					<p>曾经的这个页面可是很猎奇的，因为我是好人所以我删了猎奇元素 </p>
+					<p>请使用至少 Chrome 146，或任意支持 ES2025 及以上的浏览器 </p>
+				</body>
+			`;
+			
+			throw new Error("Unsupported browser detected, halting execution.");
+		}
+	</script>
+</html>

@@ -1,0 +1,19 @@
+---
+import { BUILD_INFO, COPYRIGHT } from "../consts";
+
+const today = new Date()
+const { buildTime, commitHash, branch, ci, buildNum, buildType, tag } = BUILD_INFO
+---
+
+<footer class="flex flex-col" style={{
+	fontFamily: "monospace",
+	color: "var(--accent)",
+	paddingTop: "1rem",
+	paddingBottom: "1.5rem",
+}}>
+	<a class="select-none" style={{ fontSize: "15px" }}>&copy; {today.getFullYear()} {COPYRIGHT} | Kūkan {tag} </a>
+	<a class="select-none text-xs text-gray-500"> Build #{buildNum} {commitHash}@{branch} at {buildTime} by {ci} ({buildType})</a>
+</footer>
+<style>
+
+</style>
