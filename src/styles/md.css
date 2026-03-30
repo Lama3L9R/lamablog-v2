@@ -90,10 +90,7 @@
     
 }
 
-.md-typst-math-inline > svg {
-    width: auto; 
-    height: 1em;
-    
+.md-typst-math-inline {
     display: inline-block;
     vertical-align: middle;
 }
@@ -107,6 +104,4 @@
 }
 
 .md-typst-math-block > svg {
-    width: 25%; 
-    height: auto;
 }

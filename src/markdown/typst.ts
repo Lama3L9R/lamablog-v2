@@ -11,7 +11,7 @@ const typstTemplate = `
         right: 0.2em,
     ))
 
-    #set text(fill: white)
+    #set text(fill: white, size: 18pt)
 `
 
 function typstCompile(mathContent: string, inline: boolean) {
@@ -51,7 +51,7 @@ export default function remarkTypstMath() {
     return function (tree: Nodes) {
         findAndReplace(tree, [
             [ 
-                /\$([^$]+?)\$/,
+                /\$([^$]+?)\$/g,
                 <any> function (match: any, mathContent: any) {
                     if (match.startsWith('$\n') || match.startsWith('$\r\n')) {
                         return match // Skip block math, handled separately
