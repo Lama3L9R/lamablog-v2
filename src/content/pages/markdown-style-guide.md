@@ -247,3 +247,7 @@ $
   "div"  & bold(F) &&= gradient dot bold(F) \\
   "curl" & bold(F) &&= gradient times bold(F) \\
 $
+
+$
+  sigma = sqrt("Var"(X))
+$
