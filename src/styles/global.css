@@ -2,6 +2,13 @@
 @import "tailwindcss";
 /* @plugin '@tailwindcss/typography'; */
 
+@font-face {
+  font-family: 'Maple Mono Normal NL';
+  src: url('/fonts/MapleMonoNormalNL.ttf') format('truetype'),
+	   url('/fonts/MapleMonoNormalNL-Regular.ttf.woff2') format('woff2');
+  font-weight: 100 200 300 400 500 600 700 800 900;
+}
+
 :root {
 	--accent: #62d6e8;
 	--d-accent: #294b50;
@@ -12,7 +19,8 @@ body {
 	font-size: 20px;
 	padding-left: 5rem;
 	padding-right: 5rem;
-    color: #e9e9f4
+    color: #e9e9f4;
+	font-family: 'Maple Mono Normal NL';
 }
 
 * {
