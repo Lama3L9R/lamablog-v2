@@ -17,6 +17,6 @@ attribute: ["about"]
 
 正在学习：`Avalonia`
 
-正在活跃的项目：`Tabi`, `fuxi AOSP ROMs`
+正在活跃的项目：`Tabi`, `Viator`
 
 我讨厌的一些东西：`C++`（但我喜欢C），`Python`（OH HELL NO PYTHON GOD PLEASE NO），青豌豆（吃了会严重的反胃）
